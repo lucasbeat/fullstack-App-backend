@@ -1,11 +1,13 @@
 import mongoose from 'mongoose';
 
-mongoose.connect("mongodb://localhost/application", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true
-});
-
-mongoose.Promise = global.Promise;
+try {
+    mongoose.connect("mongodb://localhost:27017/application", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
+})
+}catch(err){
+    console.error(err);
+}
 
 export default mongoose;
