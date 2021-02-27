@@ -1,6 +1,7 @@
 import 'dotenv/config';
 
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 
 import routes from './routes';
@@ -15,6 +16,7 @@ class App{
     }
 
     middlewares(){
+        this.server.use(cors());
         this.server.use(bodyParser.json());
         this.server.use(bodyParser.urlencoded({ extended: false }));
     }

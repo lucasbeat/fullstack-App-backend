@@ -5,8 +5,7 @@ try {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true
-})
-}catch(err){
+})}catch(err){
     console.error(err);
 }
 
